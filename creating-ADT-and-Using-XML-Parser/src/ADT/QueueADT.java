@@ -1,60 +1,60 @@
 package ADT;
 
-public class QueueADT {
-    private Node<T> front, rear;
-    private int size;
+/**
+ * 
+ * this interface represents the abstract data type (ADT) for a queue
+ * 
+ */
 
-    private static class Node<T> {
-        T element;
-        Node<T> next;
+public class QueueADT<T> {
+    /**
+     * 
+     * adds an element to the back of the queue
+     * 
+     * @param element the element to be added to the queue
+     * 
+     * @throws NullPointerException if the element is null
+     * 
+     */
+    void enqueue(T element);
 
-        Node(T element) {
-            this.element = element;
-            this.next = null;
-        }
-    }
+    /**
+     * 
+     * removes and returns an element from the front of the queue
+     * 
+     * @return the element removed from the front of the queue
+     * 
+     * @throws EmptyQueueException if the queue is null
+     * 
+     */
+    T dequeue();
 
-    public QueueADT() {
-        front = rear = null;
-        size = 0;
-    }
+    /**
+     * 
+     * retrieves the element at the front of the queue but does not remove it
+     * 
+     * @return the element at the front of the queue
+     * 
+     * @throws EmptyQueueException if the queue is null
+     * 
+     */
+    T peek();
 
-    public void enqueue(T element) {
-        Node<T> newNode = new Node<>(element);
-        if (isEmpty()) {
-            front = newNode;
-        } else {
-            rear.next = newNode;
-        }
-        rear = newNode;
-        size++;
-    }
+    /**
+     * 
+     * check to see if the queue is empty
+     * 
+     * @return true if queue is empty and false if it is not
+     * 
+     */
+    boolean isEmpty();
 
-    public T dequeue() {
-        if (isEmpty()) {
-            throw new RuntimeException("Queue is empty.");
-        }
-        T result = front.element;
-        front = front.next;
-        if (front == null) {
-            rear = null;
-        }
-        size--;
-        return result;
-    }
-
-    public T peek() {
-        if (isEmpty()) {
-            throw new RuntimeException("Queue is empty.");
-        }
-        return front.element;
-    }
-
-    public boolean isEmpty() {
-        return front == null;
-    }
-
-    public int size() {
-        return size;
-    }
+    /**
+     * 
+     * returns the number of elements in the queue
+     * 
+     * @return the size of the queue
+     * 
+     */
+    int size();
 }

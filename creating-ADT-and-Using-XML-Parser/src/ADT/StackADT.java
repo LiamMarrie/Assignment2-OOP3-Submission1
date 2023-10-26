@@ -1,52 +1,60 @@
 package ADT;
 
-public class StackADT {
-    private static final int DEFAULT_CAPACITY = 10;
-    private T[] stackArray;
-    private int top;
+/**
+ * 
+ * this interface represents the abstract data type (ADT) for a stack
+ * 
+ */
 
-    @SuppressWarnings("unchecked")
-    public StackADT() {
-        stackArray = (T[]) new Object[DEFAULT_CAPACITY];
-        top = -1;
-    }
+public class StackADT<T> {
+    /**
+     * 
+     * pushes an element onto the top of the Stack
+     * 
+     * @param element the element to push onto the Stack
+     * 
+     * @throws NullPointerException if the element is null
+     * 
+     */
+    void push(T element);
 
-    public void push(T element) {
-        if (top == stackArray.length - 1) {
-            expandCapacity();
-        }
-        stackArray[++top] = element;
-    }
+    /**
+     * 
+     * removes and returns the element at the top of the stack
+     * 
+     * @param element at the top of the stack
+     * 
+     * @throws EmptyStackException if the stack is empty
+     * 
+     */
+    T pop();
 
-    public T pop() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack is empty.");
-        }
-        T result = stackArray[top];
-        stackArray[top] = null; // Help with garbage collection.
-        top--;
-        return result;
-    }
+    /**
+     * 
+     * retrieves the element at the top of the stack but does not remove it
+     * 
+     * @return the element at the top of the stack
+     * 
+     * @throws EmptyStackException if the stack is empty
+     * 
+     */
+    T peek();
 
-    public T peek() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack is empty.");
-        }
-        return stackArray[top];
-    }
+    /**
+     * 
+     * checks if the stack is empty
+     * 
+     * @return true if the stack is empty and false if it is not
+     * 
+     */
+    boolean isEmpty();
 
-    public boolean isEmpty() {
-        return top == -1;
-    }
-
-    public int size() {
-        return top + 1;
-    }
-
-    private void expandCapacity() {
-        @SuppressWarnings("unchecked")
-        T[] largerArray = (T[]) new Object[stackArray.length * 2];
-        System.arraycopy(stackArray, 0, largerArray, 0, stackArray.length);
-        stackArray = largerArray;
-    }
+    /**
+     * 
+     * returns the number of elements in the stack
+     * 
+     * @return the size of the stack
+     * 
+     */
+    int size();
 }
