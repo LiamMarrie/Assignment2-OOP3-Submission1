@@ -1,0 +1,22 @@
+------------------------------
+Assignment 2 Status Report
+------------------------------
+Completion: 80%
+
+Issues and Missing Features:
+-------------------------------
+
+1. Incomplete Javadoc Documentation: 
+    The main code has Javadoc documentation, but the test code does not. We tried to generate Javadoc for the test code but failed due to missing JUnit 5 dependencies. Therefore, the test classes still need to be fully documented.
+
+2. Missing JUnit 5 Configuration:
+    The project needs proper configuration for the JUnit 5 testing framework. Although test classes exist, they do not work as expected because of the missing JUnit 5 dependencies. We need to fix this to ensure comprehensive testing.
+
+3. Incomplete Test Coverage:
+    The existing test classes must provide complete coverage for the main code. Some methods and edge cases may need to be adequately tested. We need to expand the test suite to cover all code paths to have stronger testing.
+
+4. Lack of Exception Handling:
+    The code does not include comprehensive exception handling. We need to implement proper handling of exceptions and error messages to improve the system's robustness and user-friendliness.
+
+5. Code Comments:
+    Although Javadoc comments are partially present, in-code comments explaining the logic, algorithms, and design decisions are minimal. To improve code maintainability and readability, we need to add more descriptive comments within the code.
