@@ -28,7 +28,7 @@ public class MyStackTests {
     public void testPeek() {
         stack.push("Java");
         assertEquals("Java", stack.peek());
-        assertEquals(1, stack.size());  // Size should not change after peek
+        assertEquals(1, stack.size()); // Size should not change after peek
     }
 
     @Test

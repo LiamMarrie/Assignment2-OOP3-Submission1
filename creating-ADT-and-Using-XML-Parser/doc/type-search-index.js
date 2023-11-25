@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ADT","l":"EmptyStackException"},{"p":"ADT","l":"ListADT"},{"p":"ADT","l":"MyArrayList"},{"p":"ADT","l":"MyStack"},{"p":"ADT","l":"QueueADT"},{"p":"ADT","l":"StackADT"}]
